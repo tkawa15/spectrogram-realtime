@@ -53,7 +53,8 @@ const clickRecBtn = () => {
 
                 x += speed
 
-                if(x >= canvasWidth) {
+                if (x >= canvasWidth) {
+                    isRecording = false
                     clearInterval(timerId)
                     startBtn.textContent = 'start'
                     stopRecording()
