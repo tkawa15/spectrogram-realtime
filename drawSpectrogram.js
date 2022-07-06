@@ -70,7 +70,14 @@ const clickRecBtn = () => {
         })
     } else {
         isRecording = false
-        startBtn.textContent = 'start'
         clearInterval(timerId)
+        startBtn.textContent = 'start'
+        stopRecording()
+                    
+        // ダウンロード
+        const a_png = document.createElement('a')
+        a_png.href = canvas.toDataURL('image/png')
+        a_png.download = `spectrogram-${getNow()}.png`
+        a_png.click()
     }
 }
